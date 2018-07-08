@@ -1,0 +1,38 @@
+import { Component, OnInit } from '@angular/core';
+import {trigger, stagger, animate, style, group, query as q, transition, keyframes} from '@angular/animations';
+const query = (s,a,o={optional:true})=>q(s,a,o);
+
+
+export const pageTransition = trigger('pageTransition', [
+  transition(':enter', [
+    query('article', style({ opacity: 0 })),
+    query('article', stagger(500, [
+      style({ transform: 'translateY(100px)' }),
+      animate('1s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateY(0px)', opacity: 1})),
+    ])),
+  ]),
+  transition(':leave', [
+    query('article', stagger(50, [
+      style({ transform: 'translateY(0px)', opacity: 1 }),
+      animate('1s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateY(100px)', opacity: 0})),
+    ])),        
+  ])
+]);
+
+@Component({
+  selector: 'app-services-home',
+  templateUrl: './services-home.component.html',
+  styleUrls: ['./services-home.component.scss'],
+  animations: [ pageTransition ],
+  host: {
+    '[@pageTransition]': ''
+  }
+})
+export class ServicesHomeComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

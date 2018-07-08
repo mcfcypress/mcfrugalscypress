@@ -1,0 +1,119 @@
+@import '../variables';
+
+.banner {
+  // background-image: url('../../../assets/wood3.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @keyframes bgFadein {
+    from { 
+      opacity: 1;
+    }
+    to { 
+      opacity: 0.30;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: black;
+    opacity: 0.30;
+    // animation-name: bgFadein;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+  }
+
+  article {
+    z-index: 1;
+  }
+
+  img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  p {
+    color: white;
+    font-size: 30px;
+    line-height: 30px;
+    text-shadow: 0px 0px 35px rgba(0,0,0,1);
+    padding: 0 15px;
+
+    @media screen and (max-width: 600px) {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  p.tiny {
+    font-size: 12px;
+    line-height: 18px;
+    max-width: 300px;
+    margin: 50px auto 0 auto;
+  }
+}
+
+.hours {
+  margin-top: 30px;
+  text-align: center;
+}
+
+article {
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 15px;
+
+  figure {
+    max-width: 600px;
+    margin-bottom: 15px;
+
+    figcaption {
+      font-size: 18px;
+      font-weight: 500;
+      font-style: italic;
+      color: $gray;
+      text-align: center;
+      margin: 10px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      width: 45%;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &__copy {
+    flex: 1 0;
+    padding: 0 15px;
+
+    @media screen and (max-width: $mobile) {
+      padding: 0;
+    }
+  }
+}

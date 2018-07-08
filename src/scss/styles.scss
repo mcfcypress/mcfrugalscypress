@@ -1,0 +1,257 @@
+@import './variables';
+
+.container {
+  padding: 15px;
+}
+
+
+// Roboto:500,500i,700,900
+
+body {
+  font-family: $copy;
+  background-image: url('../assets/concrete_seamless.png');
+  font-weight: 400;
+  color: $gray--dark;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2, 
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header;
+  text-align: center;
+  margin: 15px auto;
+
+  &::-moz-selection {
+    background: $primary-dark;
+    color: white;
+  }
+  
+  &::selection {
+    background: $primary-dark;
+    color: white;
+  }
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 70px;
+  margin: 30px 0;
+
+  @media screen and (max-width: 600px) {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 20px 0;
+  }
+
+  @media screen and (max-width: $tiny) {
+    font-size: 28px;
+    line-height: 30px;
+    margin: 15px 0;
+  }
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 40px;
+  margin: 15px 0;
+
+  @media screen and (max-width: 600px) {
+    font-size: 28px;
+    line-height: 30px;
+    margin: 15px;
+  }
+
+  @media screen and (max-width: $tiny) {
+    font-size: 24px;
+    line-height: 25px;
+    margin: 18px;
+  }
+}
+
+a, br {
+  color: $primary-dark;
+  text-decoration: none;
+
+  &::-moz-selection {
+    background: $primary-dark;
+    color: white;
+  }
+  
+  &::selection {
+    background: $primary-dark;
+    color: white;
+  }
+}
+
+p {
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 18px; 
+  line-height: 24px;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 20px;
+  }
+
+  &::-moz-selection {
+    background: $primary-dark;
+    color: white;
+  }
+  
+  &::selection {
+    background: $primary-dark;
+    color: white;
+  }
+}
+
+strong {
+  &::-moz-selection {
+    background: $primary-dark;
+    color: white;
+  }
+  
+  &::selection {
+    background: $primary-dark;
+    color: white;
+  }
+}
+
+.container {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  // padding-top: 64px;
+
+  article {
+    z-index: 1;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+strong {
+  font-weight: 900;
+  font-family: $copy;
+}
+
+.btn {
+  background: $green--light;
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  line-height: 26px;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  border: 2px solid $green;
+  border-radius: 4px;
+  transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: inline-block;
+
+  &:visited {
+    background: $green--light;
+    color: white;
+  }
+
+  &:hover {
+    // color: $green--light;
+    background: $green;
+  }
+}
+
+
+
+
+
+.footer {
+  background: $green;
+  padding: 25px 15px 25px 15px;
+
+  .icons a {
+    background: white;
+    color: $green--light;
+
+    &:hover,
+    &:active,
+    &:focus  {
+      background: $green--dark;
+      color: white;
+      border: 2px solid $green--dark;
+    }
+  }
+}
+
+
+.icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px;
+
+  @media screen and (max-width: $mobile) {
+    padding: 15px 0;
+  }
+  
+  .btn {
+    margin: 5px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.deets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  p {
+    margin: 0;
+
+    &.hours {
+      margin: 0;
+      text-align: left;
+
+      strong {
+        color: $gray--dark !important ;
+      }
+
+      @media screen and (max-width: $mobile) {
+        text-align: center ;
+        margin: 0 0 15px 0;
+      }
+    }
+
+    &:first-child {
+      text-align: right ;
+      margin-right: 15px;
+
+      @media screen and (max-width: $mobile) {
+        text-align: center ;
+        margin: 0 0 15px 0;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      margin: 0 0 15px 0;
+    }
+  }
+}

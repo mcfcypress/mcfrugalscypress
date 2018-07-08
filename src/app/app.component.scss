@@ -1,0 +1,143 @@
+@import '../scss/variables';
+
+nav {
+  background: $primary-dark;
+  z-index: 10;
+  box-shadow: 0px 0px 63px 0px rgba(0,0,0,0.75);
+  transition: all cubic-bezier(.62,.28,.23,.99) 0.7s;
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+.navbar {
+  width: initial;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all cubic-bezier(.62,.28,.23,.99) 0.7s;
+
+  @media screen and (max-width: 600px) {
+
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    padding: 20px 15px;
+    margin: 0 15px;
+    // position: absolute;
+    // top: -50px;
+    text-align: center;
+    flex: 0 0 auto;
+    width: initial;
+    transition: all  1s ease;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 500;
+    padding: 0;
+    font-size: 18px;
+    transition: all 0.5s ease-in-out;
+    letter-spacing: 2px;
+    opacity:  0.7;
+
+
+    &.active {
+      font-size: 35px;
+      font-weight: 800;
+      opacity: 1;
+    }
+
+    
+  }
+
+  a.navbar__logo {
+    display: none;
+
+    @media screen and (max-width: $mobile){
+      display: block;
+      position: absolute;
+      top: 13px;
+      margin: 0 auto;
+      align-self: center;
+      width: 100px !important;
+      padding: 0;
+    }
+  }
+
+
+  &__menu {
+    display: none;
+    position: absolute;
+    top: 10px;
+    height: 46px;
+    width: 50px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: $mobile) {
+      display: block;
+    }
+    
+    &.close {
+      z-index: 10;
+    }
+
+    &.open {
+      z-index: -10;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: initial;
+    // flex-direction: column;
+    // display: none;
+    right: 0;
+    background: $green;
+    padding:  15px 0 0 15px;
+    height: 50px;
+    overflow: hidden;
+
+    a.navbar__link {
+      opacity: 1;
+    }
+
+    &.close {
+      .navbar__link {
+        color: transparent;
+        background: white;
+        margin: 0 0 4px 0;
+        height: 4px;
+        width: 40px;
+      }
+    }
+
+
+    &.open {
+      height: 100vh;
+      padding-top: 80px;
+
+      .navbar__link {
+        color: white;
+        background: transparent;
+        height: 20px;
+        width: 150px;
+        height: 40px;
+        width: fit-content;
+        font-size: 32px;
+        line-height: 38px;
+      }
+    }
+  }
+}
+
+
+

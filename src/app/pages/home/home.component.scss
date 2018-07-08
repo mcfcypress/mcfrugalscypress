@@ -1,0 +1,76 @@
+@import '../../scss/variables';
+
+.banner {
+  background-image: url('../../../assets/wood3.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @keyframes bgFadein {
+    from { 
+      opacity: 1;
+    }
+    to { 
+      opacity: 0.30;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: black;
+    opacity: 0.30;
+    // animation-name: bgFadein;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+  }
+
+  article {
+    z-index: 1;
+  }
+
+  img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  p {
+    color: white;
+    font-size: 30px;
+    line-height: 30px;
+    text-shadow: 0px 0px 35px rgba(0,0,0,1);
+    padding: 0 15px;
+
+    @media screen and (max-width: 600px) {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  p.tiny {
+    font-size: 12px;
+    line-height: 18px;
+    max-width: 300px;
+    margin: 50px auto 0 auto;
+  }
+}
+
+.hours {
+  margin-top: 30px;
+  text-align: center;
+}
